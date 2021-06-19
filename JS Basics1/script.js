@@ -7,9 +7,9 @@ console.log(70 + 9);
 let firstName = "saira";
 
 console.log(firstName);
-*/
 
-/*
+
+
 let js = true;
 console.log(js);
 
@@ -30,10 +30,10 @@ console.log(typeof year);
 
 console.log(typeof null);
 
-*/
 
 
-/*
+
+
 let age = 22;
 age = 23;
 
@@ -44,9 +44,9 @@ const birthYear = 1999;
 
 var job = 'programmer';
 job = 'teacher';
-*/
 
-/*
+
+
 const now = 2021;
 
 const ageSaira = now - 1999;
@@ -79,9 +79,8 @@ const isFullAge = ageSaira > ageMitu;
 
 const averageAge = (ageSaira + ageMitu) / 2;
 console.log(averageAge);
-*/
 
-/*
+
 // Coding Challenge 1
 let heightMarks, heightJohn, weightMarks, weightJohn, bmiJohn, bmiMarks;
 
@@ -99,9 +98,9 @@ console.log(bmiMarks, bmiJohn);
 
 let markHigherBMI = bmiMarks > bmiJohn;
 console.log(markHigherBMI);
-*/
 
-/*
+
+
 const firstName = 'saira';
 const job = 'programmer';
 const birthYear = 1999;
@@ -120,9 +119,9 @@ ooo..');
 console.log(`String
 multiple
 lines`);
-*/
 
-/*
+
+
 const age = 13;
 const isOldEnough = age >= 18;
 
@@ -143,9 +142,9 @@ else {
 }
 
 console.log(century);
-*/
 
-/*
+
+
 // Coding Challenge-2
 let heightMarks, heightJohn, weightMarks, weightJohn, bmiJohn, bmiMarks;
 
@@ -164,9 +163,9 @@ if (bmiMarks > bmiJohn) {
 else {
         console.log(`John's BMI (${bmiJohn}) is higher than Mark's (${bmiMarks})!`);
 }
-*/
 
-/*
+
+
 // Type conversion
 const inputYear = '1991';
 console.log(inputYear + 18);
