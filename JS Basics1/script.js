@@ -187,7 +187,7 @@ console.log('23' * '3');
 let n = '1' + 1;
 n = n - 1;
 console.log(n);
-*/
+
 
 // 5 falsy values : 0, ' ', undefined, null, NaN
 
@@ -200,4 +200,148 @@ console.log(Boolean(''));
 
 console.log(Boolean(undefined));
 console.log(Boolean({}));
+
+const money = 0;
+if (money) {
+        console.log("Don't spend it all ;");
+}
+else {
+        console.log("You should get a job");
+}
+
+let height;
+if (height) {
+        console.log("YAY! Height is defined");
+}
+else {
+        console.log("Height is UNDEFINED");
+}
+
+const largeNumber = 1_000_000_000;
+console.log(largeNumber);
+
+
+const age = 18;
+if (age === 18) {
+        console.log('You just became an adult 😊 (Strict)');
+}
+
+if (age == 18) {
+        console.log('You just became an adult 😊 (Loose)');
+}
+
+const fav = Number(prompt("What's your favourite number?"));
+console.log(fav);
+console.log(typeof fav);
+
+if (fav === 23) { //'23' == 23
+        console.log("23 is an amazing number");
+}
+else if (fav === 7) {
+        console.log("7 is also amazing number");
+}
+else {
+        console.log("Number is not 23 or 7");
+}
+
+if (fav !== 23) console.log("Why not 23?");
+
+
+
+const hasDriverLicense = true; //A
+const hasGoodVision = true; //B
+console.log(hasDriverLicense && hasGoodVision);
+console.log(hasDriverLicense && !hasGoodVision);
+console.log(hasDriverLicense || hasGoodVision);
+
+const shouldDrive = hasDriverLicense && hasGoodVision;
+
+if (shouldDrive) {
+        console.log('Saira Should drive 🎉');
+}
+else {
+        console.log("Someone else should drive ✔");
+}
+
+const isTired = false; //C
+console.log(hasDriverLicense || hasGoodVision || isTired);
+
+if (hasDriverLicense && hasGoodVision && !isTired) {
+        console.log('Saira is able drive 🎉');
+}
+else {
+        console.log('Someone else should drive ✔');
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
