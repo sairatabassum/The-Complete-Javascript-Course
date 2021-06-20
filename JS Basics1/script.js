@@ -272,76 +272,113 @@ if (hasDriverLicense && hasGoodVision && !isTired) {
 else {
         console.log('Someone else should drive ✔');
 }
+
+
+// Coding Challenge 3
+const scoreDolphin = (96 + 108 + 89) / 3;
+const scoreKoalas = (88 + 91 + 110) / 3;
+
+console.log(scoreDolphin, scoreKoalas);
+
+if (scoreDolphin > scoreKoalas && scoreDolphin >= 100) {
+        console.log("Dolphins win the trophy 🏆")
+}
+else if (scoreDolphin < scoreKoalas && scoreKoalas >= 100) {
+        console.log("Koalas win the trophy 🏆")
+}
+else if (scoreKoalas === scoreDolphin && scoreDolphin
+        >= 100 && scoreKoalas >= 100) {
+        console.log('Both win the trophy')
+}
+else {
+        console.log('No one wins the trophy😥');
+}
+
+const day = 'monday';
+
+switch (day) {
+        case 'monday': // day === 'monday'
+                console.log('Plan course structure');
+                console.log("Visited nanny's house");
+                break;
+        case 'tuesday':
+                console.log("Prepare theory videos");
+                break;
+        case 'wednesday':
+        case 'thursday':
+                console.log("Write code examples");
+                break;
+        case 'friday':
+                console.log("Record videos");
+                break;
+        case 'saturday':
+        case 'sunday':
+                console.log("Enjoy the weeknd :D");
+                break;
+        default:
+                console.day("Not a valid day!!");
+
+}
+
+if (day === 'monday') {
+
+        console.log('Plan course structure');
+        console.log("Visited nanny's house");
+
+}
+else if (day === 'tuesday') {
+        console.log("Prepare theory videos");
+
+}
+else if (day === 'wednesday' || day === 'thursaday') {
+        console.log("Write code examples");
+
+}
+else if (day === 'friday') {
+        console.log("Record videos");
+
+}
+else if (day === 'saturday' || day === 'sunday') {
+        console.log("Enjoy the weeknd :D");
+
+}
+else {
+        console.day("Not a valid day!!");
+
+}
+
+
+const age = 23;
+age >= 18 ? console.log("I like to drink wine 🍷") :
+        console.log("I like to drink water 🧊")
+
+const drink = age >= 18 ? 'wine🍷' : 'water🧊';
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+        drink2 = 'wine🍷';
+}
+else {
+        drink2 = 'water🧊';
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine 🍷" :
+        "water 🧊"}`);
+
+
+// Coding Challenge 4
+let tip, bill;
+
+bill = 275;
+
+bill >= 50 && bill <= 300 ? tip = bill * (15 / 100) :
+        tip = bill * (20 / 100);
+
+console.log(`The bill was ${bill}, the tip was ${tip},
+the total values ${bill + tip}`);
+
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
