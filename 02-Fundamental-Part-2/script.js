@@ -242,3 +242,74 @@ else {
 
 /////////////////////
 // Coding Challenge 2
+
+/*
+const calcTip = function (bill) {
+        return bill >= 50 && bill <= 300 ? bill * .15 :
+                bill * 0.2;
+}
+
+// const calcTipe = bill => bill >= 50 && bill <= 300 ? bill * .15 :
+//         bill * 0.2;
+
+const bills = [125, 555, 44];
+const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(bills, tip);
+*/
+
+/////////////////////
+// Objects
+/*
+const sairaArray = [
+        'Saira',
+        'Tabassum',
+        2021 - 1997,
+        'Programmer',
+        ['Saira', 'Peter', 'Steven']
+];
+
+const saira = {
+        firstName: 'Saira',
+        lastName: 'Tabassum',
+        age: 2021 - 1997,
+        job: 'Programmer',
+        friends: ['Saira', 'Peter', 'Steven']
+};
+
+console.log(saira);
+
+console.log(saira.lastName);
+console.log(saira['lastName']);
+
+const nameKey = 'Name';
+console.log(saira['first' + nameKey]);
+console.log(saira['last' + nameKey]);
+
+// console.log(saira. 'last' + nameKey);
+
+const interestedIn = prompt('What do you want to know about Saira?\n\
+Choose between firstName, lastName, age, job, and friends');
+console.log(saira.interestedIn);
+
+console.log(saira[interestedIn]);
+
+if (saira[interestedIn]) {
+        console.log(saira[interestedIn]);
+}
+else {
+        console.log('Wrong request!');
+        console.log('What do you want to know about Saira?\n\
+        Choose between firstName, lastName, age, job, and friends')
+}
+
+saira.location = 'Portugal';
+saira['twitter'] = '@tabassum';
+console.log(saira);
+
+// Challenge
+//  "Saira has 3 friends, and her best friend is
+// called Michael"
+
+console.log(`${saira.firstName} has ${saira.friends.length}
+and her best friend is called ${saira.friends[0]}`);
+*/
