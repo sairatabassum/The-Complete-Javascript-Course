@@ -313,3 +313,208 @@ console.log(saira);
 console.log(`${saira.firstName} has ${saira.friends.length}
 and her best friend is called ${saira.friends[0]}`);
 */
+
+/////////////////////
+// Object methods
+/*
+const saira = {
+        firstName: 'Saira',
+        lastName: 'Tabassum',
+        birthYear: 1999,
+        job: 'Teacher',
+        friends: ['Michael', 'Peter', 'Steven'],
+        hasDriverLicense: true,
+
+        // calcAge: function () {
+        //         console.log(this);
+        //         return 2021 - this.birthYear;
+        // }
+        calcAge: function () {
+                this.age = 2021 - this.birthYear;
+                return this.age;
+        },
+        getSummary: function () {
+                return `${this.firstName} is a ${this.calcAge()}-year old
+                ${this.job}, she ${this.hasDriverLicense ? 'has' : 'does not have'}
+                driver's license`;
+        }
+};
+console.log(saira.calcAge());
+// console.log(saira['calcAge']());
+console.log(saira.age);
+
+// Challenge
+// 'Saira is a 46-year old teacher, she has a
+//driver's license"
+
+console.log(`${saira.firstName} is a ${saira.calcAge()}-year old
+${saira.job},she ${saira.hasDriverLicense ? 'has' : 'does not have'} driver's license`);
+
+console.log(saira.getSummary());
+*/
+
+/////////////////////
+// Coding Challenge 3
+/*
+const mark = {
+        fullName: 'Mark Miller',
+        mass: 78,
+        height: 1.69,
+
+        calcBMI: function () {
+                this.BMI = this.mass / (this.height * this.height);
+                return this.BMI;
+        }
+};
+
+const john = {
+        fullName: 'John Smith',
+        mass: 92,
+        height: 1.95,
+
+        calcBMI: function () {
+
+                this.BMI = this.mass / (this.height * this.height);
+                return this.BMI;
+        }
+
+};
+
+if (mark.calcBMI() > john.calcBMI()) {
+        console.log(`Mark's BMI (${mark.calcBMI()}) is higher than
+        John's (${john.calcBMI()})!`);
+}
+else {
+        console.log(`John's BMI (${john.calcBMI()}) is higher than
+        Mark's (${mark.calcBMI()})!`);
+}
+*/
+/////////////////////
+// Loop
+/*
+console.log('Lifting weights repetition 1');
+console.log('Lifting weights repetition 2');
+console.log('Lifting weights repetition 3');
+console.log('Lifting weights repetition 4');
+console.log('Lifting weights repetition 5');
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 5; rep++) {
+        console.log(`Lifting weights repetition ${rep}`);
+
+}
+
+
+const sairaArray = [
+        'Saira',
+        'Tabassum',
+        2021 - 1999,
+        'teacher',
+        ['Michael', 'Peter', 'Steven'],
+        true
+];
+const types = [];
+for (let i = 0; i < sairaArray.length; i++) {
+        console.log(sairaArray[i], typeof sairaArray[i]);
+        // types[i] = typeof sairaArray[i];
+        types.push(typeof sairaArray[i]);
+}
+
+console.log(types);
+
+const years = [1997, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+        ages.push(2021 - years[i]);
+}
+
+console.log(ages);
+
+// continue and break
+
+for (let i = 0; i < sairaArray.length; i++) {
+        if (typeof sairaArray[i] != 'string') continue;
+
+        console.log(sairaArray[i], typeof sairaArray[i]);
+}
+
+
+for (let i = 0; i < sairaArray.length; i++) {
+        if (typeof sairaArray[i] === 'number') break;
+
+        console.log(sairaArray[i], typeof sairaArray[i]);
+}
+
+*/
+
+/////////////////////
+// Loop backwards
+
+/*
+const saira = [
+        'Saira',
+        'Tabassum',
+        2021 - 1999,
+        'teacher',
+        ['Michael', 'Peter', 'Steven']
+];
+
+for (let i = saira.length - 1; i >= 0; i--) {
+        console.log(i, saira[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+        console.log(`--------starting exercise ${exercise}`);
+
+        for (let rep = 1; rep < 6; rep++) {
+                console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+        }
+}
+*/
+
+
+/////////////////////
+// While
+/*
+let rep = 1;
+
+while (rep <= 10) {
+        console.log(`While: lifting weights repetition ${rep}`);
+        rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6 + 1);
+
+if (dice === 6) {
+        console.log(`You rolled a ${dice}`);
+}
+
+
+while (dice !== 6) {
+        console.log(`You rolled a ${dice}`);
+        dice = Math.trunc(Math.random() * 6 + 1);
+
+}
+*/
+
+/////////////////////
+// Coding Challenge 3
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
