@@ -90,13 +90,13 @@ console.log(amplitudeNew);
 
 ///////////////////////////////////////
 // Debugging with the Console and Breakpoints
-
+/*
 const measureKelvin = function () {
   const measurement = {
     type: 'temp',
     unit: 'celsius',
     // C) FIX
-    value: Number(prompt('Degree celsius:')),
+    // value: Number(prompt('Degree celsius:')),
   };
 
   // B) FIND
@@ -112,3 +112,58 @@ const measureKelvin = function () {
 
 // A) IDENTIFY
 console.log(measureKelvin());
+
+// Using a debugger
+
+const calcTempNew = function (t1, t2) {
+  const temps = t1.concat(t2);
+  console.log(temps);
+
+  let max = 0;
+  let min = 0;
+
+  for (let i = 0; i < temps.length; i++) {
+    const curTemp = temps[i];
+
+    if (typeof curTemp != 'number') continue;
+
+    debugger;
+    if (temps[i] > max) max = curTemp;
+    if (temps[i] < min) min = curTemp;
+  }
+  console.log(max, min);
+
+  return max - min;
+};
+const amplitudeNew = calcTempNew([3, 5, 4], [9, 4, 1]);
+// a) IDENTIFY
+console.log(amplitudeNew);
+*/
+
+/////////////////////////////
+// Coding Challenge #1
+
+// 1) Understanding the problem
+//  - Array transformed to string , separated by ...
+// - What is the X days? Answer: index + 1
+
+// 2) Breaking up into sub-problems
+// - Transform array into string
+//  -Transform each element to string with ºC
+// - Strings needs to contain day (index + 1)
+// - Add ... between elements and start and end of string
+
+/*
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+const printForecast = function (arr) {
+  let str = '';
+
+  for (let i = 0; i < arr.length; i++) {
+    str += `...${arr[i]}ºC in ${i + 1} days`;
+  }
+  console.log(str);
+};
+printForecast(data1);
+*/
