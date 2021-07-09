@@ -205,3 +205,27 @@ addArrow(2, 3, 6);
 
 ////////////////////////
 // primitives VS objects
+
+// Primitives: Number, String, Boolean, Undefined, Null, Symbol, BihInt
+// Primitives are stored in call stack
+/*
+let age = 30;
+let oldAge = 31;
+oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+// Reference Types: Object, Arrays, Function
+const me = {
+  name: 'Saira',
+  age: 30,
+};
+
+// If we change something in object it will reflected both these object (friend,me)
+
+const friend = me;
+friend.age = 27;
+console.log('Friend: ', friend);
+console.log('Me: ', me);
+*/
