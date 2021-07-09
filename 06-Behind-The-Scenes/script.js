@@ -263,7 +263,7 @@ const jessica2 = {
 // shallow copy will copy properties in first level
 // deep clone will copy everything
 // Array is an object, that's why it changes also both object family array
-// For deep clone use externel libraru LO-DASH
+// For deep clone use externel library LO-DASH
 const jessicaCopy = Object.assign({}, jessica2);
 jessicaCopy.lastName = 'Davis';
 
