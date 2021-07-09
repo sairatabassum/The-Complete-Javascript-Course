@@ -2,6 +2,7 @@
 
 /////////////////////
 // Scoping in practice
+
 /*
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
@@ -102,12 +103,14 @@ console.log(z === window.x);
 
 ///////////////////////////////////
 // This keyword
+
 /*
 // Global object
 console.log(this);
 
 // In strict mode: this keyword is undefined
 // in sloppy mode: this keyword would be the global object
+
 const calcAge = function (birthYear) {
   console.log(2037 - birthYear);
   console.log(this);
@@ -116,6 +119,7 @@ calcAge(1997);
 
 // Arrow function does not get own this keyword
 // That's why this keyword is global object
+
 const calcAgeArrow = birthYear => {
   console.log(2037 - birthYear);
   console.log(this);
