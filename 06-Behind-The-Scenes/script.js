@@ -243,6 +243,7 @@ const jessica = {
 };
 // jessica and marriedJessica object point to the
 // exactly same memory address in the heap
+
 // const marriedJessica = jessica;
 // marriedJessica.lastName = 'Davis';
 
