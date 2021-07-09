@@ -206,7 +206,7 @@ addArrow(2, 3, 6);
 ////////////////////////
 // primitives VS objects
 
-// Primitives: Number, String, Boolean, Undefined, Null, Symbol, BihInt
+// Primitives: Number, String, Boolean, Undefined, Null, Symbol, BigInt
 // Primitives are stored in call stack
 /*
 let age = 30;
@@ -228,4 +228,49 @@ const friend = me;
 friend.age = 27;
 console.log('Friend: ', friend);
 console.log('Me: ', me);
+*/
+
+/*
+let lastName = 'Asri';
+let oldName = lastName;
+lastName = 'Tabassum';
+console.log(lastName, oldName);
+
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'william',
+  age: 27,
+};
+// jessica and marriedJessica object point to the
+// exactly same memory address in the heap
+// const marriedJessica = jessica;
+// marriedJessica.lastName = 'Davis';
+
+// console.log('Before marriage: ', jessica);
+// console.log('After marriage: ', marriedJessica);
+
+// Solution copying object
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'william',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+// Object.assign only works on first level
+// If an object have inside an object, inner object still be the same
+// Object.assign copy only shallow copy
+// shallow copy will copy properties in first level
+// deep clone will copy everything
+// Array is an object, that's why it changes also both object family array
+// For deep clone use externel libraru LO-DASH
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+
+// Manipulating the object within the object
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
 */
