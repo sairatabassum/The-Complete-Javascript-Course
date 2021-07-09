@@ -1,0 +1,207 @@
+'use strict';
+
+/////////////////////
+// Scoping in practice
+/*
+function calcAge(birthYear) {
+  const age = 2037 - birthYear;
+  console.log(firstName);
+
+  function printAge() {
+    let output = `${firstName} You are ${age} , born in ${birthYear}`;
+    console.log(output);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      var millenial = true;
+      // Current scope firstName
+      // Creating NEW variable with same name as outer scope's variable
+      const firstName = 'Tabassum';
+
+      // Reassigning outer scope's variable
+      output = 'NEW OUTPUT';
+      const str = `Oh and you're a millenial ${firstName}`;
+      console.log(str);
+
+      function add(a, b) {
+        return a + b;
+      }
+    }
+
+    console.log(output);
+    // var variables are function scoped
+    console.log(millenial);
+    //     const, let variables are blocked scoped
+    //     console.log(str);
+    //     functions are blocked scoped
+    //     console.log(add(a, b));
+  }
+  printAge();
+  return age;
+}
+// Cannot access 'firstName' before initialization
+// calcAge(1997);
+
+const firstName = 'saira';
+calcAge(1991);
+// age, printAge is not defined
+// console.log(age);
+// printAge();
+*/
+
+//////////////////////////////
+// Hoisting and TDZ
+/*
+// Variables
+// console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = 'SAIRA';
+let job = 'teacher';
+const year = 198;
+
+// Functions
+console.log(addDec(2, 3));
+// console.log(addExpr,addArrow); // var with function undefined
+// console.log(addExpr(2, 3)); //Cannot access 'addExpr' before initialization
+// console.log(addArrow(2, 3)); //Cannot access 'addArrow' before initialization
+
+function addDec(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+const addArrow = (a, b) => a + b;
+
+// Example
+// numProducts is undefined also  undefines is falsy value
+if (!numProducts) {
+  deleteShoppingCart();
+}
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('All products deleted');
+}
+
+// NOTE : Use let and const
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+// Variable declare with var will create property on global window object
+console.log(x === window.x);
+console.log(y === window.x);
+console.log(z === window.x);
+*/
+
+///////////////////////////////////
+// This keyword
+/*
+// Global object
+console.log(this);
+
+// In strict mode: this keyword is undefined
+// in sloppy mode: this keyword would be the global object
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAge(1997);
+
+// Arrow function does not get own this keyword
+// That's why this keyword is global object
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1997);
+
+const Saira = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+Saira.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+matilda.calcAge = Saira.calcAge;
+// this keyword always points to the object that is calling the method
+// this keyword is dynamic. it depends how the function is called
+matilda.calcAge();
+
+const f = Saira.calcAge;
+f(); // Regular function
+*/
+
+///////////////////////
+// Regular function vs Arrow function
+// var firstName = 'Matilda';
+/*
+const Saira = {
+  firstName: 'Saira',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2021 - this.year);
+
+    //     Solution 1
+    //     const self = this;
+    //     const isMillenial = function () {
+    //       console.log(self); //self or that
+    //       console.log(self.year >= 1981 && self.year <= 1996);
+    //     };
+
+    //     Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+
+    isMillenial();
+  },
+
+  //Regular function get its own this keyword
+  //   greet: function () {
+  //     console.log(this);
+  //     console.log(`hey ${this.firstName}`);
+  //   },
+
+  //   Arrow function does not get its own this keyword
+  greet: () => {
+    console.log(this);
+    console.log(`hey ${this.firstName}`);
+  },
+};
+
+Saira.greet();
+Saira.calcAge();
+
+// Arguments keyword
+// arguments exist only in regular function
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 3);
+addExpr(2, 3, 4, 5);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+// arguments is not defined
+addArrow(2, 3, 6);
+*/
+
+////////////////////////
+// primitives VS objects
