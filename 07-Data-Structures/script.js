@@ -233,5 +233,73 @@ console.log(restaurantCopy, restaurant);
 */
 
 ///////////////////////////////
+// Rest Pattern and Parameters - opposit of spread operator
+/*
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0,
+      close: 24,
+    },
+  },
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient, otherIngredient);
+  },
+};
+// 1) DESTRUCTURING
+// Spread operator is to unpack an array
+// Rest is to pack elements into an array
 
-// Rest Pattern and Parameters
+// spread, because on the right side of the assignment operator
+const arr = [1, 2, ...[3, 4]];
+console.log(arr);
+
+// REST SYNTAX, because on LEFT side
+// REST pattern collects the elements that are unused in the destructuring assignment.
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+// REST ELEMENT must be the last element
+const [pizza, rissotto, ...otherFood] = [
+  ...restaurant.starterMenu,
+  ...restaurant.mainMenu,
+];
+console.log(pizza, rissotto, otherFood);
+
+// Object
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(sat, weekDays);
+
+// 2)fUNCTION
+const add = function (...numbers) {
+  console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(6, 7, 8, 5, 4, 3, 4);
+
+// SPREAD is the opposit of REST
+const x = [23, 4, 5];
+add(...x);
+
+restaurant.orderPizza('Mushroom', 'Onion', 'Olives', 'Spinach');
+restaurant.orderPizza('mushrooms');
+*/
