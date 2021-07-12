@@ -283,7 +283,7 @@ console.log(pizza, rissotto, otherFood);
 const { sat, ...weekDays } = restaurant.openingHours;
 console.log(sat, weekDays);
 
-// 2)fUNCTION
+// 2) FUNCTION
 const add = function (...numbers) {
   console.log(numbers);
   let sum = 0;
