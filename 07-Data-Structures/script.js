@@ -153,3 +153,85 @@ const {
 } = openingHours;
 console.log(op, cl);
 */
+////////////////////////////////////
+//The Spread Operator
+
+/*
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0,
+      close: 24,
+    },
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+};
+
+const arr = [2, 4, 5];
+const badArr = [1, 3, arr[0], arr[1], arr[2]];
+console.log(badArr);
+
+// Take all elements out of array
+const newArray = [2, 3, ...badArr];
+console.log(newArray);
+// Individual elements
+console.log(...newArray);
+
+// Copy array
+const mainMenu = [...newArray];
+
+// Join 2 arrays together
+const menu = [2, 8, ...mainMenu, ...newArray];
+console.log(menu);
+
+// Iterables : arrays, strings, maps, sets. NOT objects
+
+const str = 'Saira';
+const letters = [...str];
+console.log(letters);
+console.log(...str);
+//  Multiples value separated by a comma : pass argument into function and build a new array
+// console.log(`${...str}`);
+
+// Real-world example
+const ingredients = [
+  prompt("let's make pasta! Ingredient1?"),
+  prompt('Ingredient2?'),
+  prompt('Ingredient3?'),
+];
+console.log(ingredients);
+
+// instead of this we can use spread operator
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
+
+// Object ES62018
+const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Resadh';
+console.log(restaurantCopy, restaurant);
+*/
+
+///////////////////////////////
+
+// Rest Pattern and Parameters
