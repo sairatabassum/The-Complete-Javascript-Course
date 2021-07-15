@@ -297,3 +297,110 @@ for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
 */
+
+////////////////////////////////
+// Coding Challenge-2
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// 1)
+
+const score = game.scored.entries();
+
+for (const [i, x] of score) {
+  console.log(`Goal ${i + 1}: ${x}`);
+}
+
+// 2)
+
+const avg = Object.values(game.odds);
+const len = avg.length;
+
+let sum = 0;
+
+for (const x of avg) {
+  sum += x;
+}
+console.log(sum / len);
+
+// 3)
+const odds = Object.entries(game.odds);
+
+for (const [i, j] of odds) {
+  const teamStr = i === 'x' ? 'draw' : `victory ${game[i]}`;
+  console.log(`Odd of ${teamStr} ${j}`);
+}
+
+// BONUS
+
+/////////////////////////////////
+// SETS
+// sets just a collection of unique values
+
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Fries',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(new Set('Saira'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+// orderSet.clear();
+console.log(orderSet);
+
+for (const x of orderSet) {
+  console.log(x);
+}
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set('Saira Tabassum').size);
