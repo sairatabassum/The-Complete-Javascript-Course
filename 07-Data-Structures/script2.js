@@ -410,6 +410,7 @@ console.log(new Set('Saira Tabassum').size);
 
 //////////////////////////////
 // Map
+/*
 const rest = new Map();
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze, Italy');
@@ -473,3 +474,13 @@ console.log(answer);
 const exam =
   question.get('correct') === answer ? question.get(true) : question.get(false);
 console.log(exam);
+
+// Different way
+console.log(question.get(question.get('correct') === answer));
+
+// Convert map to array
+console.log(...question);
+// console.log(question.entries());
+console.log([...question.keys()]);
+console.log([...question.values()]);
+*/
