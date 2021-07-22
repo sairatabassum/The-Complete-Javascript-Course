@@ -579,6 +579,7 @@ console.log(typeof new String('Saira').slice(1));
 
 /////////////////////////////////
 // Working with strings Part - 2
+/*
 const airline = 'TAP Air Portugal';
 
 console.log(airline.toLowerCase());
@@ -590,3 +591,52 @@ const passengerLower = passenger.toLowerCase();
 const passengerCorrect =
   passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect);
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '   Hello@Jonas.Io';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(trimmedEmail, normalizedEmail);
+
+console.log(email === normalizedEmail);
+
+// replacing
+const priceGB = '288,97~';
+const priceUS = priceGB.replace('~', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23, Boarding door 23!';
+
+console.log(announcement.replace('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane = 'AirBus A2320neo';
+console.log(plane.includes('A23'));
+console.log(plane.includes('78'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('AirBus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed on board');
+  } else {
+    console.log('Welcome abroad');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+*/
