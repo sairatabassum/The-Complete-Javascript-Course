@@ -696,3 +696,22 @@ planesInLine(8);
 
 ////////////////////////////
 // Coding Challenge -4
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  // console.log(text);
+  const rows = text.split('\n');
+
+  for (const [i, j] of rows.entries()) {
+    const words = j.toLowerCase().trim().split('_');
+    // console.log(words.length, words);
+    let str = '';
+    for (let [l, x] of words.entries()) {
+      if (l === words.length - 1) {
+        x = x.replace(x[0], x[0].toUpperCase());
+      }
+      str += x;
+    }
+    console.log(`${str.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
