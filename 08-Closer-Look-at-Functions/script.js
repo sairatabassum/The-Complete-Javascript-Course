@@ -70,4 +70,36 @@ checkIn(flight, saira);
 */
 
 /////////////////////////
-// First-Class and Higher-Order Functions
+// Functions Accepting Callback Functions
+/*
+const oneWord = function (str, fn) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// Higher-Order function
+const transformer = function (str, fn) {
+  console.log(`Original String: ${str}`);
+  console.log(`Transformed String: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('Javascript is the best!', upperFirstWord);
+transformer('Javascript is the best!', oneWord);
+
+// JS uses callbacks all the time
+const high5 = function () {
+  console.log('Hi');
+};
+document.body.addEventListener('click', high5);
+
+['saira', 'asald', 'aSKA'].forEach(high5);
+*/
+
+///////////////////////////////////
+// Functions Returning Functions
