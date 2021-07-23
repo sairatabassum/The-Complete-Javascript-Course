@@ -30,3 +30,44 @@ createBooking('Ls437', 3, 90);
 
 createBooking('LH12', undefined, 1000);
 */
+
+/////////////////////////////////
+// How Passing Arguments Works: Value vs. Reference
+/*
+const flight = 'LH234';
+const saira = {
+  name: 'Saira Tabassum',
+  passport: 3243954387,
+};
+
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH999';
+  passenger.name = 'Mrs ' + passenger.name;
+
+  if (passenger.passport === 3243954387) {
+    alert('Checked In');
+  } else {
+    alert('Wrong passport');
+  }
+};
+
+// checkIn(flight, saira);
+// console.log(flight);
+// console.log(saira);
+
+// Is the same as doing...
+// pass an object to a function, whatever change in a copy will also happen in a original
+// pass an primitive type to a function, whatever change in a copy will not happen in a original
+// const flightNum = flight;
+// const passenger = saira;
+
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 10000000);
+};
+
+newPassport(saira);
+checkIn(flight, saira);
+*/
+
+/////////////////////////
+// First-Class and Higher-Order Functions
