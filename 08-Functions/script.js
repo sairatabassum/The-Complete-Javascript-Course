@@ -103,3 +103,77 @@ document.body.addEventListener('click', high5);
 
 ///////////////////////////////////
 // Functions Returning Functions
+
+/*
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+console.log(greeterHey);
+greeterHey('Saira');
+greeterHey('Jonas');
+
+greet('Hello')('Saira');
+
+const greetAr = greeting => name => console.log(`${greeting} ${name}`);
+greetAr('Hello')('Saira');
+*/
+
+//////////////////////////////
+// The call and apply Methods
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  italacode: 'LH',
+  bookings: [],
+  // book : function(){}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.italacode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.italacode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(234, 'Saira TABASSUM');
+lufthansa.book(899, 'jOHN SMITH ');
+console.log(lufthansa);
+
+const eurow = {
+  airline: 'Eurow',
+  italacode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// DOES NOT work
+// book(23, 'dslkdls');
+
+// call method allows us to set the this keyword of any function that we want to call.
+book.call(eurow, 23, 'Saira taab');
+console.log(eurow);
+
+book.call(lufthansa, 34, 'skajdn');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss',
+  italacode: 'PO',
+  bookings: [],
+};
+book.call(swiss, 34, 'skajdn');
+console.log(swiss);
+
+// Apply method - take an array of the arguments
+
+const flightData = [23, 'Saira'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData);
+
+// The bind Method
