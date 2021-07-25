@@ -123,8 +123,8 @@ greetAr('Hello')('Saira');
 */
 
 //////////////////////////////
-// The call and apply Methods
-
+// The call, apply, bind Methods
+/*
 const lufthansa = {
   airline: 'Lufthansa',
   italacode: 'LH',
@@ -177,3 +177,56 @@ console.log(swiss);
 book.call(swiss, ...flightData);
 
 // The bind Method
+const bookEW = book.bind(eurow);
+const bookLH = book.bind(lufthansa);
+const bookPO = book.bind(swiss);
+
+console.log(bookEW);
+bookEW(23, 'Saira');
+
+const bookEW23 = book.bind(eurow, 23);
+bookEW23('Saira Tabassum');
+bookEW23('Sumaia Mitu');
+
+// with Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+// this keyword will point to the lufthansa
+lufthansa.buyPlane();
+// this keyword will point to the button element.
+// document.querySelector('.btn1').addEventListener('click', lufthansa.buyPlane);
+
+// this keyword will point to the lufthansa
+document
+  .querySelector('.btn1')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial Application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+// addVat = value => value + value * 0.23;
+const addVat = addTax.bind(null, 0.23);
+
+console.log(addVat(100));
+console.log(addVat(23));
+
+// Function returning another function
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addVat2 = addTaxRate(0.23);
+console.log(addVat2(100));
+console.log(addVat2(23));
+*/
+
+/////////////////////////////
+// Coding Challenge -1
