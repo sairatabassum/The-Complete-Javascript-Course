@@ -87,3 +87,6 @@ currenciesUnique.forEach(function (value, _, set) {
   console.log(`${value}: ${value}`);
 });
 */
+
+////////////////////////////////////
+//
