@@ -108,8 +108,130 @@ const checkDogs = function (dogsJulia, dogsKate) {
     }
   });
 };
+
+
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 */
 
 ////////////////////////////////////////////////
 // The map Method
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUSD = 1.1;
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUSD;
+});
+
+console.log(movementsUSD);
+
+// Without map method
+// const movementsUSDfor = [];
+// for (const mov of movements) {
+//   movementsUSDfor.push(mov * eurToUSD);
+// }
+// console.log(movementsUSDfor);
+
+const movementsUSDarr = movements.map(mov => mov * eurToUSD);
+console.log(movementsUSDarr);
+
+const movementsDescription = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: you ${mov > 0 ? 'deposit' : 'withdraw'} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescription);
+*/
+
+////////////////////////////////////////
+// The filter Method
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const deposit = movements.filter(mov => mov > 0);
+const withdrawls = movements.filter(mov => mov < 0);
+console.log(deposit, withdrawls);
+*/
+
+///////////////////////////////////////
+// The reduce Method
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// accumulator -> SNOWBALL
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  console.log(`Iteration ${i}: ${acc}`);
+  return acc + cur;
+}, 0);
+
+const balanceArr = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance, balanceArr);
+
+// Maximum value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
+*/
+
+/////////////////////////////////////
+// Coding Challenge -2
+/*
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+  const adults = humanAges.filter(age => age >= 18);
+  console.log(humanAges);
+  console.log(adults);
+
+  // const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+  const average = adults.reduce(
+    (acc, age, i, arr) => acc + age / arr.length,
+    0
+  );
+
+  // 2 3. (2+3)/2 = 2.5 === 2/2+2/3 = 2.5
+  return average;
+};
+const res = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+console.log(res);
+*/
+
+///////////////////////////////////////////////
+// The Magic of Chaining Methods
+// PIPELINE
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const euroToUsd = 1.1;
+
+const totalDeposit = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * euroToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDeposit);
+*/
+
+///////////////////////////////
+// Coding Challenge -3
+/*
+const calcAverageHumanAge = ages =>
+  ages
+    .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+const res = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+console.log(res);
+*/
+
+////////////////////////////////////////
+// The find Method
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(firstWithdrawal);
+
+// Find method in object
+const name = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(name);
+*/
