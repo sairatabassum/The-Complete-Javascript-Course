@@ -238,3 +238,31 @@ console.log(name);
 
 /////////////////////////////////
 // The findIndex Method
+
+///////////////////////////////
+// some and every
+// EQUALITY
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements.includes(-130));
+
+// CONDITION
+const anyDeposits = movements.some(mov => mov > 5000);
+console.log(anyDeposits);
+
+// EVERY
+const everyDeposit = movements.every(mov => mov > 0);
+console.log(everyDeposit);
+
+// Separate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
+*/
+
+////////////////////////
+// flat and flatMap
+
+const arr = [[1, 2, 3], 4, 5, [6, 7, 8]];
+console.log(arr.flat());
