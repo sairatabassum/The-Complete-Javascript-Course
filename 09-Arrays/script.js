@@ -235,3 +235,6 @@ console.log(firstWithdrawal);
 const name = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(name);
 */
+
+/////////////////////////////////
+// The findIndex Method
