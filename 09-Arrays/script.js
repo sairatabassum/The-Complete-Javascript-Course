@@ -331,5 +331,5 @@ const z = Array.from({ length: 8 }, (_, i) => i + 1);
 console.log(z);
 */
 
-///////////////////////////////////
-//  Array Methods Practice
+////////////////////////////////////////////
+// Coding Challenge -4
