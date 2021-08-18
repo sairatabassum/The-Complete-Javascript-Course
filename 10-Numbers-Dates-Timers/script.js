@@ -86,4 +86,106 @@ console.log(+(2.7).toFixed(2));
 */
 
 ///////////////////////////////////////
-//
+// The Remainder Operator
+/*
+console.log(5 % 2);
+console.log(5 / 2); // 5 = 2 * 2 + 1
+console.log(8 % 3);
+console.log(8 / 3); // 8 = 2 * 3 + 2
+console.log(6 % 2);
+console.log(6 / 2);
+console.log(7 % 2);
+console.log(7 / 2);
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
+*/
+
+///////////////////////////////////
+// Working with BigInt (primitive type)
+/*
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(278432222222222222222222222222222226476547385643854);
+console.log(278432222222222222222222222222222226476547385643854n);
+console.log(BigInt(2784354));
+
+// Operations
+console.log(100000000n + 10000000000000n);
+console.log(
+  34987543984398439843984398439843984398439843984398439843984398439843984398439843984398n *
+    32874638276257n
+);
+
+// ERROR
+// can't convert BigInt to number
+
+// const huge = 239872947329473958n;
+// const num = 23;
+// console.log(huge * num);
+
+// CONVERT BOTH INTO BIGINT NUMBER
+const huge = 239872947329473958n;
+const num = 23n;
+console.log(huge * num);
+
+// comparision
+console.log(20n > 15);
+console.log(20n === 15);
+console.log(typeof 20n);
+console.log(20n == 12);
+
+console.log(huge + ' is really a big number');
+
+// ERROR
+// console.log(Math.sqrt(huge));
+
+// Division
+console.log(10n / 3n);
+console.log(10 / 3);
+*/
+
+///////////////////////////////////
+// Creating Dates
+/*
+const now = new Date();
+console.log(now);
+
+console.log(new Date('Aug 18 2021 22:05:41'));
+console.log(new Date('December 24,2015'));
+
+console.log(new Date(2050, 10, 19, 15, 23, 5));
+console.log(new Date(2050, 10, 31));
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
+
+// Working with dates
+const future = new Date(2050, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+// Timestamp
+console.log(new Date(2552462580000));
+
+console.log(Date.now());
+
+future.setFullYear(2040);
+console.log(future);
+*/
+///////////////////////////////
+// Operations with Dates

@@ -142,6 +142,7 @@ const updateUi = function (acc) {
 
 // Event handler
 let currentAccount;
+
 btnLogin.addEventListener('click', function (e) {
   // Prevent from submitting
   e.preventDefault();
@@ -258,6 +259,15 @@ labelBalance.addEventListener('click', function () {
   // console.log(movementsUI.map(el => +(el.textContent.replace('€', ''))));
   console.log(movementsUI);
   console.log([...document.querySelectorAll('.movements__value')]);
+});
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    // 0, 2, 4, 6
+    if (i % 2 === 0) row.style.backgroundColor = 'yellow';
+    // 0, 3, 6, 9
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
 });
 
 ///////////////////////////////////
