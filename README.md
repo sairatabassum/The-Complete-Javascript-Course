@@ -1,1 +1,1 @@
-# The-Complete-Javascript-Course
+# The Complete Javascript Course
