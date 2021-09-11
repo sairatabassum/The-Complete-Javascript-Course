@@ -189,3 +189,14 @@ console.log(future);
 */
 ///////////////////////////////
 // Operations with Dates
+
+const future = new Date(2037, 2, 2);
+console.log(+future);
+
+const calcdaysPassed = (date1, date2) =>
+  Math.abs((date2 - date1) / (1000 * 60 * 60 * 24));
+
+console.log(calcdaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14)));
+
+//////////////////////////////
+// Internationalizing Dates (Intl)
