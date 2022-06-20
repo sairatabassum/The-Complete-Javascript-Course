@@ -62,12 +62,16 @@ const lastName = 'Tabassum';
 
 console.log(firstName + ' ' + lastName);
 
+// Assignment Operators
 let x = 10 + 5; //15
-x += 10; // x = x + 10
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4 = 100
+x ++; // x = x + 1
+x--; 
 console.log(x);
 
 // Comparison operators
-console.log(ageSaira > ageMitu);
+console.log(ageSaira > ageMitu); // <, >, >=, <=
 
 const isFullAge = ageSaira > ageMitu;
 
@@ -380,5 +384,3 @@ console.log(`The bill was ${bill}, the tip was ${tip},
 the total values ${bill + tip}`);
 
 */
-
-
