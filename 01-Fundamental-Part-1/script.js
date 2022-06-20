@@ -188,8 +188,8 @@ console.log('23' + '10' + 3)
 console.log('23' * '3');
 
 
-let n = '1' + 1;
-n = n - 1;
+let n = '1' + 1; // '11'
+n = n - 1; // 10
 console.log(n);
 
 
