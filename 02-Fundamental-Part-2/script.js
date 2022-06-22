@@ -285,7 +285,7 @@ const nameKey = 'Name';
 console.log(saira['first' + nameKey]);
 console.log(saira['last' + nameKey]);
 
-// console.log(saira. 'last' + nameKey);
+// console.log(saira. 'last' + nameKey); //ERROR
 
 const interestedIn = prompt('What do you want to know about Saira?\n\
 Choose between firstName, lastName, age, job, and friends');
