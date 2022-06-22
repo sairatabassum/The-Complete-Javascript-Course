@@ -15,7 +15,7 @@ if (hasDriversLicense) console.log('I can drive :D');
 // const if = 34;
 */
 
-/////////////////////
+//////////////////////////////////////
 /*
 // Function
 
@@ -36,7 +36,7 @@ const appleJuice = fruitProcessor(5, 0);
 console.log(appleJuice);
 */
 
-/////////////////////
+//////////////////////////////////////////
 /*
 // Function declarations vs Function Expressions
 
@@ -57,7 +57,7 @@ const age2 = calcAge2(1999);
 console.log(age2);
 */
 
-/////////////////////
+//////////////////////////////////////////////
 /*
 // Arrow function
 const calcAge3 = birthYear => 2021 - birthYear;
@@ -73,7 +73,7 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 console.log(yearsUntilRetirement(1999, 'saira'));
 */
 
-/////////////////////
+/////////////////////////////////////////
 // Function call other Function
 /*
 function cutFruitPieces(fruit) {
@@ -92,7 +92,7 @@ function fruitProcessor(apples, oranges) {
 console.log(fruitProcessor(2, 3));
 */
 
-/////////////////////
+//////////////////////////////////////////
 // Reviewing Function
 /*
 const calcAge = function (birthYear) {
@@ -118,7 +118,7 @@ console.log(yearsUntilRetirement(1991, 'saira'));
 console.log(yearsUntilRetirement(1950, 'Mike'));
 */
 
-/////////////////////
+////////////////////////////////////
 // Coding Challenge 1
 /*
 const average = (score1, score2, score3) => (score1 + score2 + score3) / 3;
@@ -151,7 +151,7 @@ console.log(avgDolphins2, avgKoalas2);
 console.log(checkWinner(avgDolphins2, avgKoalas2));
 */
 
-/////////////////////
+///////////////////////////////////////////
 // Arrays
 /*
 const friend1 = 'Michael';
@@ -202,10 +202,10 @@ console.log(ages);
 */
 
 /*
-/////////////////////
+/////////////////////////////////////
 // Basic Array Operation
 
-// Add elements
+// Add elements---------------
 const friends = ['Michael', 'Steven', 'Peter'];
 const newLength = friends.push('Saira');
 console.log(friends);
@@ -214,7 +214,7 @@ console.log(newLength);
 friends.unshift('Asri');
 console.log(friends);
 
-// Remove elements
+// Remove elements----------
 friends.pop() // Last
 const popped = friends.pop();
 console.log(popped);
@@ -223,7 +223,7 @@ console.log(friends);
 friends.shift(); // First
 console.log(friends);
 
-// This return the index at which this element
+// This return the index at which this element--------
 console.log(friends.indexOf('Steven'));
 console.log(friends.indexOf('Bob'));
 
