@@ -81,4 +81,40 @@ console.log(msg.style.backgroundColor); //INLINE STYLE
 console.log(getComputedStyle(msg).color);
 console.log(getComputedStyle(msg).height);
 
-msg.style.height = '60px';
+msg.style.height =
+  Number.parseFloat(getComputedStyle(msg).height, 10) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', '#5ec576;');
+
+//////////////////////////////////////////
+// Attributes
+
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+logo.alt = 'haha logo';
+
+// Non-standard
+console.log(logo.designer);
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('company', 'bankist');
+logo.setAttribute('designer', 'bankist');
+
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+// Data attributed
+console.log(logo.dataset.versionNumber);
+
+//////////////////////////////////////////
+// Classes
+logo.classList.add('c');
+logo.classList.remove('c', 'i');
+logo.classList.toggle('c');
+logo.classList.contains('c'); //not includes
