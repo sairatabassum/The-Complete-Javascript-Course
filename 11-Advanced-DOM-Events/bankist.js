@@ -181,7 +181,7 @@ tabsContainer.addEventListener('click', function (e) {
 // Menu fade animation
 const nav = document.querySelector('.nav');
 
-const handleOver = function (e, opacity) {
+const handleOver = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
 
@@ -190,16 +190,17 @@ const handleOver = function (e, opacity) {
 
     siblings.forEach(t => {
       if (t !== link) {
-        t.style.opacity = opacity;
+        t.style.opacity = this;
       }
     });
-    logo.style.opacity = opacity;
+    logo.style.opacity = this;
   }
 };
 
-nav.addEventListener('mouseover', function (e) {
-  handleOver(e, 0.5);
-});
-nav.addEventListener('mouseout', function (e) {
-  handleOver(e, 1);
+nav.addEventListener('mouseover', handleOver.bind(0.5));
+nav.addEventListener('mouseout', handleOver.bind(1));
+
+// Sticky navigation
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
 });
