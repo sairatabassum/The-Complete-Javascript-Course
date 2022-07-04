@@ -62,22 +62,52 @@ const randomColor = () =>
 
 document.querySelector('.nav__link').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('LINK', e.target, e.currentTarget);
+  //   console.log('LINK', e.target, e.currentTarget);
 
   //   STOP PROPAGATION
-  e.stopPropagation();
+  //   e.stopPropagation();
 }); //Bubbling
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('Container', e.target, e.currentTarget);
+  //   console.log('Container', e.target, e.currentTarget);
 }); //Bubbling
 
 document.querySelector('.nav').addEventListener(
   'click',
   function (e) {
     this.style.backgroundColor = randomColor();
-    console.log('Nav', e.target, e.currentTarget);
+    // console.log('Nav', e.target, e.currentTarget);
   },
   true
 ); //Capturing
+
+//////////////////////////////////////
+// Page navigation
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+//////////////////////////////////
+// Event delegation
+// 1. add the event listener to a common parent element
+// 2. Determine what element orginated the event
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  console.log(e.target);
+  e.preventDefault();
+
+  //   Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
