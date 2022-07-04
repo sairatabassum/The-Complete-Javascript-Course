@@ -54,33 +54,33 @@ btnScrollTo.addEventListener('click', function (e) {
 
 // rgb(255,255,255)
 
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min); //12-16
+// const randomInt = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1) + min); //12-16
 
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  //   console.log('LINK', e.target, e.currentTarget);
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   //   console.log('LINK', e.target, e.currentTarget);
 
-  //   STOP PROPAGATION
-  //   e.stopPropagation();
-}); //Bubbling
+//   //   STOP PROPAGATION
+//   //   e.stopPropagation();
+// }); //Bubbling
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  //   console.log('Container', e.target, e.currentTarget);
-}); //Bubbling
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   //   console.log('Container', e.target, e.currentTarget);
+// }); //Bubbling
 
-document.querySelector('.nav').addEventListener(
-  'click',
-  function (e) {
-    this.style.backgroundColor = randomColor();
-    // console.log('Nav', e.target, e.currentTarget);
-  },
-  true
-); //Capturing
+// document.querySelector('.nav').addEventListener(
+//   'click',
+//   function (e) {
+//     this.style.backgroundColor = randomColor();
+//     // console.log('Nav', e.target, e.currentTarget);
+//   },
+//   true
+// ); //Capturing
 
 //////////////////////////////////////
 // Page navigation
@@ -173,4 +173,33 @@ tabsContainer.addEventListener('click', function (e) {
   document
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add('operations__content--active');
+});
+
+///////////////////////////////
+// Passing Arguments to Event Handlers
+
+// Menu fade animation
+const nav = document.querySelector('.nav');
+
+const handleOver = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(t => {
+      if (t !== link) {
+        t.style.opacity = opacity;
+      }
+    });
+    logo.style.opacity = opacity;
+  }
+};
+
+nav.addEventListener('mouseover', function (e) {
+  handleOver(e, 0.5);
+});
+nav.addEventListener('mouseout', function (e) {
+  handleOver(e, 1);
 });
