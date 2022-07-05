@@ -37,7 +37,7 @@ document.addEventListener('keydown', function (e) {
 // console.log(document.head);
 // console.log(document.body);
 
-const header = document.querySelector('.header');
+// const header = document.querySelector('.header');
 // console.log(document.querySelectorAll("section"));
 // console.log(document.getElementById("section--1"));
 // console.log(document.getElementsByTagName("button"));
