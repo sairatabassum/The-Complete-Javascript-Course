@@ -319,8 +319,6 @@ const createDots = function () {
   });
 };
 
-createDots();
-
 const activateDot = function (slide) {
   document
     .querySelectorAll('.dots__dot')
@@ -338,8 +336,13 @@ const goToSlide = function (curSlide) {
   });
 };
 
-goToSlide(0);
-activateDot(0);
+const init = function () {
+  createDots();
+  goToSlide(0);
+  activateDot(0);
+};
+init();
+
 // curSlide=0: 0% , 100% , 200% , 300%
 
 const nextSlide = function () {
