@@ -88,3 +88,40 @@ BMW.accelerate();
 
 Mercedes.accelerate();
 Mercedes.brake();
+
+/////////////////////////////////
+// ES6 classes
+
+// class expression
+// const PersonCL = class {};
+
+// class declaration
+class PersonCL {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  // Method will be added to .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+  greet() {
+    console.log(`hey ${this.firstName}`);
+  }
+}
+
+const sairu = new PersonCL('sairu', 1997);
+sairu.calcAge();
+
+console.log(sairu.__proto__ === PersonCL.prototype);
+// PersonCL.prototype.greet = function () {
+//   console.log(`hey ${this.firstName}`);
+// };
+
+sairu.greet();
+
+// 1. Classes are not hoisted
+// 2. Classes are first-class citizes
+// 3. Classes are executed in strict mode
+
+// Setters and Getters
