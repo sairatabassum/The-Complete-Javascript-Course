@@ -1,5 +1,7 @@
 'use strict';
 
+/////////////////////////////////////////////////
+// Constructor Functions and the new operator
 const Person = function (firstName, birthYear) {
   console.log(this);
   //   Instance properties
@@ -17,6 +19,11 @@ const Person = function (firstName, birthYear) {
 // 3. {} linked to prototype
 // 4. function automatically return {}
 
+Person.hey = function () {
+  console.log('hey there 👋');
+};
+Person.hey();
+///////////////////////////////////////
 // Prototypes
 Person.prototype.calcAge = function () {
   console.log(2039 - this.birthYear);
@@ -89,7 +96,7 @@ BMW.accelerate();
 Mercedes.accelerate();
 Mercedes.brake();
 
-/////////////////////////////////
+///////////////////////////////////////////
 // ES6 classes
 
 // class expression
@@ -97,8 +104,8 @@ Mercedes.brake();
 
 // class declaration
 class PersonCL {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
   // Method will be added to .prototype property
@@ -106,12 +113,30 @@ class PersonCL {
     console.log(2037 - this.birthYear);
   }
   greet() {
-    console.log(`hey ${this.firstName}`);
+    console.log(`hey ${this.fullName}`);
+  }
+  // set a property that already exist
+  set fullName(name) {
+    console.log(name);
+
+    if (name.includes(' ')) this._fullname = name;
+    else alert('enter full name');
+  }
+
+  get fullName() {
+    return this._fullname;
+  }
+
+  // Static Methods
+  static hey() {
+    console.log('hey there 👋');
   }
 }
 
-const sairu = new PersonCL('sairu', 1997);
+PersonCL.hey();
+const sairu = new PersonCL('sairu tabassum', 1997);
 sairu.calcAge();
+console.log(sairu.fullName);
 
 console.log(sairu.__proto__ === PersonCL.prototype);
 // PersonCL.prototype.greet = function () {
@@ -125,3 +150,19 @@ sairu.greet();
 // 3. Classes are executed in strict mode
 
 // Setters and Getters
+const account = {
+  owner: 'saira',
+  movements: [299, 11, 2234, 546, 657],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+account.latest = 50;
+console.log(account.movements);
