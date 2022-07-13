@@ -362,3 +362,6 @@ const jay = Object.create(StudentProto);
 jay.init('Jay', 2002, 'CSE');
 jay.introduce();
 jay.calcAge();
+
+/////////////////////////////////
+// Encapsulation: Protected Properties and Methods
