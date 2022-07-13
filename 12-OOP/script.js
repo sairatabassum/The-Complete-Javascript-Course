@@ -71,30 +71,30 @@ const h1 = document.querySelector('h1');
 ///////////////////////////////////////
 // Coding Challenge #1
 
-const Car = function (make, speed) {
-  this.make = make;
-  this.speed = speed;
-};
+// const Car = function (make, speed) {
+//   this.make = make;
+//   this.speed = speed;
+// };
 
-Car.prototype.accelerate = function () {
-  this.speed += 10;
-  console.log(`${this.make} is going at ${this.speed}`);
-};
-Car.prototype.brake = function () {
-  this.speed -= 5;
-  console.log(`${this.make} is going at ${this.speed}`);
-};
+// Car.prototype.accelerate = function () {
+//   this.speed += 10;
+//   console.log(`${this.make} is going at ${this.speed}`);
+// };
+// Car.prototype.brake = function () {
+//   this.speed -= 5;
+//   console.log(`${this.make} is going at ${this.speed}`);
+// };
 
-const BMW = new Car('BMW', 120);
-const Mercedes = new Car('Mercedes', 95);
+// const BMW = new Car('BMW', 120);
+// const Mercedes = new Car('Mercedes', 95);
 
-BMW.accelerate();
-BMW.accelerate();
-BMW.brake();
-BMW.accelerate();
+// BMW.accelerate();
+// BMW.accelerate();
+// BMW.brake();
+// BMW.accelerate();
 
-Mercedes.accelerate();
-Mercedes.brake();
+// Mercedes.accelerate();
+// Mercedes.brake();
 
 ///////////////////////////////////////////
 // ES6 classes
@@ -191,22 +191,22 @@ steven.calcAge();
 ////////////////////////////
 // Coding Challenge #2
 
-class Car_re {
-  constructor(speed) {
-    this.speed = speed;
-  }
-  get speedUS() {
-    return this.speed / 1.6;
-  }
-  set speedUS(speed) {
-    this.speed = speed * 1.6;
-  }
-}
+// class Car_re {
+//   constructor(speed) {
+//     this.speed = speed;
+//   }
+//   get speedUS() {
+//     return this.speed / 1.6;
+//   }
+//   set speedUS(speed) {
+//     this.speed = speed * 1.6;
+//   }
+// }
 
-const Ford = new Car_re(120);
-Ford.speedUS = 50;
-console.log(Ford);
-console.log(Ford.speedUS);
+// const Ford = new Car_re(120);
+// Ford.speedUS = 50;
+// console.log(Ford);
+// console.log(Ford.speedUS);
 
 //////////////////////////////////
 // Inheritance Between "Classes": Constructor Functions
@@ -242,3 +242,47 @@ console.log(mike.__proto__);
 console.log(mike.__proto__.__proto__);
 Student.prototype.constructor = Student;
 console.dir(Student.prototype.constructor);
+
+/////////////////////////////////////
+// Coding Challenge #3
+
+const Electric_Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Electric_Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`${this.make} is going at ${this.speed}`);
+};
+
+Electric_Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(`${this.make} is going at ${this.speed}`);
+};
+
+const EV = function (make, speed, charge) {
+  Electric_Car.call(this, make, speed);
+  this.charge = charge;
+};
+// Link the prototypes
+EV.prototype = Object.create(Electric_Car.prototype);
+
+EV.prototype.chargeBattery = function (chargeTo) {
+  this.charge = chargeTo;
+};
+EV.prototype.accelerate = function () {
+  this.speed += 20;
+  this.charge--;
+  console.log(
+    `${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`
+  );
+};
+
+const Tesla = new EV('Tesla', 120, 23);
+Tesla.chargeBattery(90);
+Tesla.brake();
+Tesla.accelerate();
+
+///////////////////////////////////
+// Inheritance Between "Classes": ES6 Classes
