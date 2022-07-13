@@ -286,3 +286,79 @@ Tesla.accelerate();
 
 ///////////////////////////////////
 // Inheritance Between "Classes": ES6 Classes
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+  // Method will be added to .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+  greet() {
+    console.log(`hey ${this.fullName}`);
+  }
+  // set a property that already exist
+  set fullName(name) {
+    // console.log(name);
+
+    if (name.includes(' ')) this._fullname = name;
+    else alert('enter full name');
+  }
+
+  get fullName() {
+    return this._fullname;
+  }
+
+  // Static Methods
+  static hey() {
+    console.log('hey there 👋');
+  }
+}
+
+class StudentCL extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    // Always needs to happen first
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  }
+  calcAge() {
+    console.log(`I am ${2037 - this.birthYear} year old`);
+  }
+}
+
+const martha = new StudentCL('martha sja', 2012, 'CSE');
+martha.introduce();
+martha.calcAge();
+
+//////////////////////////////////////
+// Inheritance Between "Classes": Object.create
+const PersonProtoIN = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const StudentProto = Object.create(PersonProtoIN);
+
+StudentProto.init = function (firstName, birthYear, course) {
+  PersonProtoIN.init.call(this, firstName, birthYear);
+  this.course = course;
+};
+StudentProto.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const jay = Object.create(StudentProto);
+jay.init('Jay', 2002, 'CSE');
+jay.introduce();
+jay.calcAge();
