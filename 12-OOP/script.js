@@ -2,59 +2,59 @@
 
 /////////////////////////////////////////////////
 // Constructor Functions and the new operator
-const Person = function (firstName, birthYear) {
-  console.log(this);
-  //   Instance properties
-  this.firstName = firstName;
-  this.birthYear = birthYear;
+// const Person = function (firstName, birthYear) {
+//   console.log(this);
+//   //   Instance properties
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
 
-  //   //   Never do this
-  //   this.calcAge = function () {
-  //     console.log(2039 - this.birthYear);
-  //   };
-};
+//   //   //   Never do this
+//   //   this.calcAge = function () {
+//   //     console.log(2039 - this.birthYear);
+//   //   };
+// };
 
 // 1. New {} is created
 // 2. function is called, this = {}
 // 3. {} linked to prototype
 // 4. function automatically return {}
 
-Person.hey = function () {
-  console.log('hey there 👋');
-};
-Person.hey();
-///////////////////////////////////////
-// Prototypes
-Person.prototype.calcAge = function () {
-  console.log(2039 - this.birthYear);
-};
+// Person.hey = function () {
+//   console.log('hey there 👋');
+// };
+// Person.hey();
+// ///////////////////////////////////////
+// // Prototypes
+// Person.prototype.calcAge = function () {
+//   console.log(2039 - this.birthYear);
+// };
 
-const jay = 'jay';
+// const jay = 'jay';
 
-const saira = new Person('Saira', 1999);
-console.log(saira);
-console.log(saira instanceof Person);
-console.log(jay instanceof Person);
+// const saira = new Person('Saira', 1999);
+// console.log(saira);
+// console.log(saira instanceof Person);
+// console.log(jay instanceof Person);
 
-console.log(Person.prototype);
-saira.calcAge();
-console.log(Person.prototype.isPrototypeOf(saira));
-console.log(Person.prototype.isPrototypeOf(Person));
+// console.log(Person.prototype);
+// saira.calcAge();
+// console.log(Person.prototype.isPrototypeOf(saira));
+// console.log(Person.prototype.isPrototypeOf(Person));
 
-// .prototypeOfObjects
+// // .prototypeOfObjects
 
-Person.prototype.species = 'Homo Sapiens';
-console.log(saira.species);
+// Person.prototype.species = 'Homo Sapiens';
+// console.log(saira.species);
 
-console.log(saira.hasOwnProperty('firstName'));
-console.log(saira.hasOwnProperty('species'));
+// console.log(saira.hasOwnProperty('firstName'));
+// console.log(saira.hasOwnProperty('species'));
 
-console.log(saira.__proto__);
-// Object.prototype (top of prototype chain)
-console.log(saira.__proto__.__proto__);
-console.log(saira.__proto__.__proto__.__proto__);
+// console.log(saira.__proto__);
+// // Object.prototype (top of prototype chain)
+// console.log(saira.__proto__.__proto__);
+// console.log(saira.__proto__.__proto__.__proto__);
 
-console.log(Person.prototype.constructor);
+// console.log(Person.prototype.constructor);
 
 const arr = [3, 4, 6, 3, 2, 5, 2, 7, 9];
 console.log(arr.__proto__.__proto__);
@@ -169,3 +169,76 @@ console.log(account.movements);
 
 /////////////////////////////////
 //  Object.create
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 2002;
+steven.calcAge();
+steven.init('steven', 1979);
+steven.calcAge();
+
+////////////////////////////
+// Coding Challenge #2
+
+class Car_re {
+  constructor(speed) {
+    this.speed = speed;
+  }
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+const Ford = new Car_re(120);
+Ford.speedUS = 50;
+console.log(Ford);
+console.log(Ford.speedUS);
+
+//////////////////////////////////
+// Inheritance Between "Classes": Constructor Functions
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'CSE');
+mike.introduce();
+mike.calcAge();
+
+console.log(mike instanceof Student);
+console.log(mike instanceof Person);
+console.log(mike instanceof Object);
+
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
