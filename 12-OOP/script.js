@@ -365,3 +365,134 @@ jay.calcAge();
 
 /////////////////////////////////
 // Encapsulation: Protected Properties and Methods
+// 1)Public fields
+// 2)Private fields
+// 3)Public methods
+// 4)Private methods
+// there is also static version
+
+class Account {
+  // 1) Public fields (instances)
+  local = navigator.language;
+  _movements = [];
+
+  // 2)Private fields (instances)
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    // Protected property
+    this.#pin = pin;
+    this.movements = [];
+    this.local = navigator.language;
+  }
+
+  // 3)Public methods
+  // Public interface
+  getMovements() {
+    return this.#movements;
+  }
+  deposit(val) {
+    this.#movements.push(val);
+    return this;
+  }
+  withdraw(val) {
+    this.deposit(-val);
+    return this;
+  }
+
+  requestLoan(val) {
+    if (this.#approveLoan(val)) {
+      this.deposit(val);
+      console.log(`loan approved`);
+      return this;
+    }
+  }
+
+  // 4)Private methods
+  #approveLoan(val) {
+    return true;
+  }
+
+  static helper() {
+    console.log('helper');
+  }
+}
+
+const acc1 = new Account('saira', 'ddd', 1111);
+
+acc1.deposit(250);
+acc1.withdraw(140);
+acc1.requestLoan(1000);
+console.log(acc1.getMovements());
+console.log(acc1);
+
+// we can not access this variable outside
+// console.log(acc1.#movements);
+// console.log(acc1.#pin);
+// console.log(acc1.#approveloan(1));
+
+Account.helper();
+
+// Chaining
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
+console.log(acc1.getMovements());
+
+///////////////////////////////////////////////
+// Coding Challenge #4
+
+class EVCL {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} is going at ${this.speed}`);
+  }
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} is going at ${this.speed}`);
+    return this;
+  }
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+class CarCL extends EVCL {
+  #charge;
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this.#charge = charge;
+  }
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo;
+    return this;
+  }
+  accelerate() {
+    this.speed += 20;
+    this.#charge--;
+    console.log(
+      `${this.make} going at ${this.speed}km/h, with a charge of ${
+        this.#charge
+      }%`
+    );
+    return this;
+  }
+}
+
+const Rivian = new CarCL('Rivian', 120, 23);
+console.log(Rivian);
+console.log(Rivian.speedUS);
+Rivian.accelerate()
+  .accelerate()
+  .accelerate()
+  .brake()
+  .chargeBattery(50)
+  .accelerate();
