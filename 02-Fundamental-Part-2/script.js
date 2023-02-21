@@ -211,16 +211,16 @@ const newLength = friends.push('Saira');
 console.log(friends);
 console.log(newLength);
 
-friends.unshift('Asri');
+friends.unshift('Asri'); // add element beginning of the array
 console.log(friends);
 
 // Remove elements----------
 friends.pop() // Last
-const popped = friends.pop();
+const popped = friends.pop(); // returns removed element
 console.log(popped);
 console.log(friends);
 
-friends.shift(); // First
+friends.shift(); // remove First element
 console.log(friends);
 
 // This return the index at which this element--------
