@@ -289,7 +289,7 @@ console.log(saira['last' + nameKey]);
 
 const interestedIn = prompt('What do you want to know about Saira?\n\
 Choose between firstName, lastName, age, job, and friends');
-console.log(saira.interestedIn);
+console.log(saira.interestedIn); //undefined
 
 console.log(saira[interestedIn]);
 
@@ -416,6 +416,8 @@ const sairaArray = [
 const types = [];
 for (let i = 0; i < sairaArray.length; i++) {
         console.log(sairaArray[i], typeof sairaArray[i]);
+        
+        //Filling types array
         // types[i] = typeof sairaArray[i];
         types.push(typeof sairaArray[i]);
 }
