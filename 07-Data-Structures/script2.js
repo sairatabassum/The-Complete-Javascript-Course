@@ -65,7 +65,6 @@ console.log(guests);
 const guestsCorrect = restaurant.numGuest ?? 10;
 console.log(guestsCorrect);
 */
-
 ////////////////////////
 // Coding Challenge-01
 /*
@@ -145,7 +144,7 @@ team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
 */
 
-///////////////////////////////////
+/////////////////////////////////////---
 // The for-of Loop
 /*
 const restaurant = {
@@ -178,7 +177,7 @@ console.log(menu.entries());
 
 /////////////////////////
 // Enhanced Object Literals
-
+/*
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -226,7 +225,7 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-
+*/
 ////////////////////////////////
 // Optional Chaining (?.) - if a certain property does not exist,
 // then undefined is returned immediately.

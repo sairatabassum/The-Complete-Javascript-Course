@@ -2,7 +2,6 @@
 
 /////////////////////////////////
 // Destructuring Arrays
-
 /*
 const restaurant = {
   name: 'Classico Italiano',
@@ -150,12 +149,12 @@ console.log(a, b);
 // nested object
 const {
   fri: { open: op, close: cl },
-} = openingHours;
+} = restaurant.openingHours;
 console.log(op, cl);
 */
+
 ////////////////////////////////////
 //The Spread Operator
-
 /*
 const restaurant = {
   name: 'Classico Italiano',
@@ -219,8 +218,8 @@ const ingredients = [
 ];
 console.log(ingredients);
 
-// instead of this we can use spread operator
 restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// instead of this we can use spread operator
 restaurant.orderPasta(...ingredients);
 
 // Object ES62018
@@ -233,7 +232,7 @@ console.log(restaurantCopy, restaurant);
 */
 
 ///////////////////////////////
-// Rest Pattern and Parameters - opposit of spread operator
+// Rest Pattern and Parameters - opposite of spread operator
 /*
 const restaurant = {
   name: 'Classico Italiano',
@@ -296,7 +295,7 @@ add(2, 3);
 add(5, 3, 7, 2);
 add(6, 7, 8, 5, 4, 3, 4);
 
-// SPREAD is the opposit of REST
+// SPREAD is the opposite of REST
 const x = [23, 4, 5];
 add(...x);
 
