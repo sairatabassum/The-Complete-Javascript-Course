@@ -1,6 +1,6 @@
 'use strict';
 
-//////////////////////////////////
+////////////////////////////////////////////////////////////////////
 // Short Circuiting (&& and ||)
 /*
 const restaurant = {
@@ -54,7 +54,7 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-/////////////////////////////
+///////////////////////////////////////////////////////////////
 // The Nullish Coalescing Operator (??)
 
 restaurant.numGuest = 0;
@@ -65,7 +65,7 @@ console.log(guests);
 const guestsCorrect = restaurant.numGuest ?? 10;
 console.log(guestsCorrect);
 */
-////////////////////////
+//////////////////////////////////////////////////////////
 // Coding Challenge-01
 /*
 const game = {
@@ -144,7 +144,7 @@ team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
 */
 
-/////////////////////////////////////---
+///////////////////////////////////////////////////////////////////////
 // The for-of Loop
 /*
 const restaurant = {
@@ -175,7 +175,7 @@ for (const [i, el] of menu.entries()) {
 console.log(menu.entries());
 */
 
-/////////////////////////
+///////////////////////////////////////////////////////////
 // Enhanced Object Literals
 /*
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
@@ -188,7 +188,7 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [weekdays[5]]: {
+  [`DAY-${2 + 4}`]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -225,11 +225,11 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-*/
-////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
 // Optional Chaining (?.) - if a certain property does not exist,
 // then undefined is returned immediately.
-/*
+
 if (restaurant.openingHours && restaurant.openingHours.mon) {
   console.log(restaurant.openingHours.mon.open);
 }
@@ -264,11 +264,10 @@ console.log(users[1]?.name ?? 'Does not exist');
 // Without ? and ??
 if (users.length > 0) console.log(users[0].name);
 else console.log('Does not exist');
-*/
 
-////////////////////////
+//////////////////////////////////////////////////////////
 // Looping Objects: Object Keys, Values, and Entries
-/*
+
 // Property NAMES
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -297,7 +296,7 @@ for (const [key, { open, close }] of entries) {
 }
 */
 
-////////////////////////////////
+////////////////////////////////////////////////////////////////
 // Coding Challenge-2
 /*
 const game = {
