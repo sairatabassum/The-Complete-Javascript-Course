@@ -64,7 +64,30 @@ console.log(guests);
 // Nullish: null and undefined (NOT 0 or '')
 const guestsCorrect = restaurant.numGuest ?? 10;
 console.log(guestsCorrect);
+
+///////////////////////////////////////////////
+// Logical Assignment Operators
+
+const res1 = {
+  name: 'Capri',
+  numGuest: 20,
+};
+
+const res2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// res1.numGuest = res1.numGuest || 10;
+// res2.numGuest = res2.numGuest || 10;
+
+// res1.numGuest ||= 10;
+// res2.numGuest ||= 10;
+
+console.log(res1);
+console.log(res2);
 */
+
 //////////////////////////////////////////////////////////
 // Coding Challenge-01
 /*
@@ -177,7 +200,7 @@ console.log(menu.entries());
 
 ///////////////////////////////////////////////////////////
 // Enhanced Object Literals
-/*
+
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -294,7 +317,6 @@ for (const x of entries) {
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
-*/
 
 ////////////////////////////////////////////////////////////////
 // Coding Challenge-2

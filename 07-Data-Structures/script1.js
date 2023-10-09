@@ -154,7 +154,7 @@ console.log(op, cl);
 */
 
 ////////////////////////////////////
-//The Spread Operator
+//The Spread Operator (Unpacking Elements)
 /*
 const restaurant = {
   name: 'Classico Italiano',
@@ -232,7 +232,7 @@ console.log(restaurantCopy, restaurant);
 */
 
 ///////////////////////////////
-// Rest Pattern and Parameters - opposite of spread operator
+// Rest Pattern (packing Elements) and Parameters - opposite of spread operator (unpacking elements)
 /*
 const restaurant = {
   name: 'Classico Italiano',

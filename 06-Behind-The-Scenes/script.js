@@ -49,7 +49,7 @@ calcAge(1991);
 // printAge();
 */
 
-//////////////////////////////
+/////////////////////////////////////////////////////
 // Hoisting and TDZ
 /*
 // Variables
@@ -235,18 +235,20 @@ console.log('Me: ', me);
 */
 
 /*
+// Primitive types
 let lastName = 'Asri';
 let oldName = lastName;
 lastName = 'Tabassum';
 console.log(lastName, oldName);
 
+
+// Reference types
 const jessica = {
   firstName: 'Jessica',
   lastName: 'william',
   age: 27,
 };
-// jessica and marriedJessica object point to the
-// exactly same memory address in the heap
+// jessica and marriedJessica object point to the exactly same memory address in the heap
 
 // const marriedJessica = jessica;
 // marriedJessica.lastName = 'Davis';
